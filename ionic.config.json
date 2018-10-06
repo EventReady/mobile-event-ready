@@ -1,0 +1,8 @@
+{
+    "name": "EventReady",
+    "integrations": {
+        "cordova": {}
+    },
+    "type": "ionic-angular",
+    "pro_id": "85bc6507"
+}

@@ -1,0 +1,68 @@
+<ion-header>
+	<ion-navbar color="primary" class="white-text">
+		<ion-title>Caesars Palace</ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content>
+	<!--*********** Image header  ***********-->
+	<div class="detail-header">
+		<h2 class="detail-name">Caesars Palace</h2>
+	</div>
+	<!--***********  Description ***********-->
+	<ion-card>
+		<ion-card-header no-margin>
+			<ion-list>
+				<ion-list-header>
+					<h2>Venue Details</h2>
+				</ion-list-header>
+				<ion-item>
+					<ion-icon name="map" item-left></ion-icon>
+					<h2>Hotel/Casino</h2>
+					<p>Type</p>
+				</ion-item>
+				<ion-item>
+					<ion-icon name="calendar" item-left></ion-icon>
+					<h2>
+						3570 Las Vegas, Blvd
+						<br /> Las Vegas, NV. 89109
+						<br /> 866.563.4782
+					</h2>
+					<p>Address</p>
+				</ion-item>
+				<ion-item>
+					<ion-icon name="contacts" item-left></ion-icon>
+					<h2>
+						<strong>
+							<a href="https://www.caesars.com/caesars-palace/things-to-do">Things To Do</a>
+						</strong>
+					</h2>
+					<p>Things To Do</p>
+				</ion-item>
+			</ion-list>
+		</ion-card-header>
+		<ion-card-content>
+			<ion-grid>
+				<ion-row class="callout-block" *ngIf="loaded">
+					<ion-col class="callout" style="padding-bottom: 18px;">
+						<div>
+							<h2 class="top-tag highlight-2 primary">Venue Maps</h2>
+						</div>
+						<div text-center>
+							<div *ngFor="let map of venueMaps; let i = index">
+								<img style="display: none" [src]="map.map" #i />
+								<button ion-button small class="view-info-btn dark" color="primary" (click)="goToMap( i )">{{
+									map.title }}</button>
+							</div>
+						</div>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+
+			<ion-list>
+				<ion-item no-lines>
+					<button (click)="addNote()" type="button" color="orange" ion-button full>Add Notes</button>
+				</ion-item>
+			</ion-list>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
